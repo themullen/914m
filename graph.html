@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Table</title>
+        <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+        <link href="assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+        <meta name="viewport" content="width=device-width">
+        <meta charset="UTF-8">
+        <script src="assets/scripts/nav.min.js"></script>
+        
+<script src="assets/scripts/jquery.min.js"></script>
+<script src="assets/scripts/pagination.min.js"></script>
+<script src="assets/scripts/list.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <ul class="topnav" id="topnav">
+  <li><a class="logotype" href="index.html">914M</a></li>
+  <li><a href="weather.html">link 1</a></li>
+  <li><a href="graph.html">link 2</a></li>
+  <li><a href="map.html">link 3</a></li>
+  <li><a href="#link 4">link 4</a></li>
+  <a href="javascript:void(0);" onclick="myFunction()"><li class="burger"><span></span></li></a>
+
+
+
+</ul>
+
+<script>
+document.querySelector("li.burger").addEventListener("click", function() {
+  this.classList.toggle("active");
+});
+</script>
+
+            
+<div class="container">
+	<div class="row">
+    <div class="half">
+			<div class="border-top">
+				<div class="dash-left"></div>
+				<div class="dash-right"></div>
+				<h3 class="typeinfo">MAP</h3>
+				<div class="mapmove"></div>
+				<div id='map'></div>
+			</div>
+		</div>
+		<div class="half">
+			<div class="border-top">
+				<div class="dash-left"></div>
+				<div class="dash-right"></div>
+				<h3 class="typeinfo">MUNRO</h3>
+				</div>
+				<div id="munro">
+					<td class="search-row">
+						<object class="icon" type="image/svg+xml" data="assets/img/svg/search.svg"></object>
+						<input class="search" placeholder="Search" />
+					</td>
+				<div class="sort-row">
+					<div class="sort-box">
+						<td>
+							<object class="icon" type="image/svg+xml" data="assets/img/svg/alphabetically.svg"></object>
+		  				<button class="sort" data-sort="mun-name">
+		    			Sort by name
+		  				</button>
+						</td>
+					</div>
+				<div class="sort-box">
+					<div class="sort-box-right">
+					<td>
+						<object class="icon" type="image/svg+xml" data="assets/img/svg/height.svg"></object>
+						<button class="sort" data-sort="mun-height">
+							Sort by height
+						</button>
+					</td>
+				</div>
+				</div>
+			</div>
+
+			<div class="munro-table">
+		  <table class="munro-content">
+				<tr class="list-top">
+					<td>Name</td>
+					<th>Height(m)</th>
+
+				</tr>
+				<td colspan="2" id="munro-title"></td>
+		    <tbody class="list">
+
+		      <tr>
+		        <td class="mun-name"><a href="a-bhuidheanach-bheag.html">A'Bhuidheanach Bheag</a></td>
+		      	<td class="mun-height"><a href="a-bhuidheanach-bheag.html">936</a></td>
+		    	</tr>
+					<tr>
+						<td class="mun-name"><a href="a-chailleach.html">A'Chailleach</a></td>
+						<td class="mun-height"><a href="a-chailleach.html">997</a></td>
+					</tr>
+					<tr>
+						<td class="mun-name"><a href="a-chailleach-monadhliath.html">A'Chailleach (Monadhliath)</a></td>
+						<td class="mun-height"><a href="a-chailleach-monadhliath.html">930</a></td>
+					</tr>
+					<tr>
+						<td class="mun-name"><a href="a-chraileag.html">A'Chraileag (A'Chralaig)</a></td>
+						<td class="mun-height"><a href="a-chraileag.html">1120</a></td>
+					</tr>
+
+
+
+
+
+
+		    </tbody>
+		  </table>
+			<ul class="pagination"></ul>
+		</div>
+		</div>
+
+		<div class="divider">
+		</div>
+
+
+
+			</div>
+
+
+		</div>
+	</div>
+
+
+        </div>
+        
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoicGF1bG11bGxlbjgyIiwiYSI6ImNpdDk1YjJ5MjAwMngyb3FkZTAydXFjNHEifQ.vhRMTigdoc9s8iT3g-uP5w';
+var map = L.mapbox.map('map')
+		.setView([56.491, -4.203], 6);
+    L.mapbox.styleLayer('mapbox://styles/paulmullen82/ciurb118800tn2jmlzuut7tun').addTo(map);
+
+var myLayer = L.mapbox.featureLayer().addTo(map);
+
+var geojson = [
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-5.003508, 56.79685]
+    },
+    properties: {
+      title: 'ben nevis',
+      description: '1,326m <br><a href="this is a link.html">View Data</a>',
+      icon: {
+        iconUrl: 'assets/img/svg/logo.svg',
+        iconSize: [12, 12], // size of the icon
+        iconAnchor: [24, 6], // point of the icon which will correspond to marker's location
+        popupAnchor: [-18, -6], // point from which the popup should open relative to the iconAnchor
+        className: 'dot'
+      }
+    }
+  },
+];
+// Set a custom icon on each marker based on feature properties.
+myLayer.on('layeradd', function(e) {
+  var marker = e.layer,
+    feature = marker.feature;
+  marker.setIcon(L.icon(feature.properties.icon));
+});
+myLayer.setGeoJSON(geojson);
+</script>
+
+<script>
+var options = {
+	valueNames: [ 'mun-name', 'mun-height' ],
+	page: 2,
+	plugins: [
+		ListPagination({})
+	]
+};
+
+var listObj = new List('munro', options);
+
+</script>
+
+
+    </body>
+</html>

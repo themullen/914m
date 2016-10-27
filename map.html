@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Empty</title>
+        <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+        <link href="assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+        <meta name="viewport" content="width=device-width">
+        <meta charset="UTF-8">
+        <script src="assets/scripts/nav.min.js"></script>
+        
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <ul class="topnav" id="topnav">
+  <li><a class="logotype" href="index.html">914M</a></li>
+  <li><a href="weather.html">link 1</a></li>
+  <li><a href="graph.html">link 2</a></li>
+  <li><a href="map.html">link 3</a></li>
+  <li><a href="#link 4">link 4</a></li>
+  <a href="javascript:void(0);" onclick="myFunction()"><li class="burger"><span></span></li></a>
+
+
+
+</ul>
+
+<script>
+document.querySelector("li.burger").addEventListener("click", function() {
+  this.classList.toggle("active");
+});
+</script>
+
+            
+<div class="container">
+	<div class="row">
+	<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+		<div class="mapbox">
+			<div class="border-top">
+				<div class="dash-left"></div>
+				<div class="dash-right"></div>
+				<h3 class="typeinfo">MAP</h3>
+				<div class="mapmove"></div>
+				<div id='map'></div>
+				<script>
+				L.mapbox.accessToken = 'pk.eyJ1IjoicGF1bG11bGxlbjgyIiwiYSI6ImNpdDk1YjJ5MjAwMngyb3FkZTAydXFjNHEifQ.vhRMTigdoc9s8iT3g-uP5w';
+				var map = L.mapbox.map('map')
+				    .setView([56.79685, -5.003508], 15);
+
+				// Use styleLayer to add a Mapbox style created in Mapbox Studio
+				L.mapbox.styleLayer('mapbox://styles/paulmullen82/citu5njbp00262iqgrq0bi3nq').addTo(map);
+				if (map.tap) map.dragging.disable();
+				if (map.tap) map.touchZoom.disable();
+				if (map.tap) map.doubleClickZoom.disable();
+				if (map.tap) map.scrollWheelZoom.disable();
+				</script>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+
+
+
+        </div>
+        
+
+    </body>
+</html>

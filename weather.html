@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Weather</title>
+        <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+        <link href="assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+        <meta name="viewport" content="width=device-width">
+        <meta charset="UTF-8">
+        <script src="assets/scripts/nav.min.js"></script>
+        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js" ></script>
+<script src='http://momentjs.com/downloads/moment.js'></script>
+<script src='http://momentjs.com/downloads/moment-timezone-with-data-2010-2020.js'></script>
+<script src="assets/scripts/jquery.simpleWeather.min.js"></script>
+<script src="assets/scripts/weather.min.js"></script>
+<script src="assets/scripts/time.min.js"></script>
+
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <ul class="topnav" id="topnav">
+  <li><a class="logotype" href="index.html">914M</a></li>
+  <li><a href="weather.html">link 1</a></li>
+  <li><a href="graph.html">link 2</a></li>
+  <li><a href="map.html">link 3</a></li>
+  <li><a href="#link 4">link 4</a></li>
+  <a href="javascript:void(0);" onclick="myFunction()"><li class="burger"><span></span></li></a>
+
+
+
+</ul>
+
+<script>
+document.querySelector("li.burger").addEventListener("click", function() {
+  this.classList.toggle("active");
+});
+</script>
+
+            
+<div class="container">
+	<div class="row">
+		<div class="data_block">
+			<div class="border-top">
+				<div class="dash-left"></div>
+				<div class="dash-right"></div>
+				<h3 class="typeinfo">WEATHER</h3>
+				<table class="tg">
+					<tr>
+						<td>
+							<div class="climate_bg"></div>
+						</td>
+						<th>
+							<p class="currently"></p>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<object class="icon" type="image/svg+xml" data="assets/img/svg/temp.svg"></object>
+						</td>
+						<th>
+							<p class="temperature"></p>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<object class="icon" type="image/svg+xml" data="assets/img/svg/wind.svg"></object>
+						</td>
+						<th>
+							<div class="windspeed"></div>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<object class="icon" type="image/svg+xml" data="assets/img/svg/direction.svg"></object>
+						</td>
+						<th>
+							<div class="direction"></div>
+						</th>
+					</tr>
+          <tr>
+            <td>
+              <object class="icon" type="image/svg+xml" data="assets/img/svg/vis.svg"></object>
+            </td>
+            <th>
+              <div class="visibility"></div>
+            </th>
+          </tr>
+				</table>
+			</div>
+		</div>
+		<div class="data_block">
+			<div class="border-top">
+			<div class="dash-left"></div>
+			<div class="dash-right"></div>
+			<div class="sunmoon">
+			  <h3 class="typeinfo">SUN RISE AND SET</h3>
+			  <div class="sun-times">
+			  	<div class="sun-path">
+						<div class="sun-animation-rotate">
+							<div class="sun-animation"></div>
+						</div>
+					</div>
+					<div class="sun-rotate">
+			    	<div class="sun-symbol-path"><object class="symbol icon" type="image/svg+xml" data="assets/img/svg/sun.svg"></object></div>
+					</div>
+				</div>
+			  <div class="legend">
+					<div class="sunrise">
+						<table class="tg">
+							<tr>
+								<td>
+								<object class="icon" type="image/svg+xml" data="assets/img/svg/sun_rise.svg"></object>
+								</td>
+								<th>
+									<div class="sun-up"></div>
+								</th>
+							</tr>
+						</table>
+						<div class="dash-middle"></div>
+					</div>
+			    <div class="sunset">
+						<table class="tgr">
+							<tr>
+								<th>
+									<div class="sun-down"></div>
+								</th>
+								<td>
+									<object class="icon" type="image/svg+xml" data="assets/img/svg/sun_set.svg"></object>
+								</td>
+							</tr>
+						</table>
+					</div>
+			  </div>
+			</div>
+				<div class="time-block">
+					<p><object class="icon" type="image/svg+xml" data="assets/img/svg/time.svg"></object></p>
+					<p class="local-time" data-tz="Europe/London"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+        </div>
+        
+<script>$('.sunmoon .sun-animation').css('transform', 'rotate(45deg)');
+				$('.sun-symbol-path').css('transform', 'rotate(45deg)');
+</script>
+
+
+    </body>
+</html>

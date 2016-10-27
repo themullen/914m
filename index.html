@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Ben Nevis</title>
+        <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+        <link href="assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+        <meta name="viewport" content="width=device-width">
+        <meta charset="UTF-8">
+        <script src="assets/scripts/nav.min.js"></script>
+        
+<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+<script type="text/javascript" charset="utf-8" src="http://animate.adobe.com/runtime/6.0.0/edge.6.0.0.min.js"></script>
+
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <ul class="topnav" id="topnav">
+  <li><a class="logotype" href="index.html">914M</a></li>
+  <li><a href="weather.html">link 1</a></li>
+  <li><a href="graph.html">link 2</a></li>
+  <li><a href="map.html">link 3</a></li>
+  <li><a href="#link 4">link 4</a></li>
+  <a href="javascript:void(0);" onclick="myFunction()"><li class="burger"><span></span></li></a>
+
+
+
+</ul>
+
+<script>
+document.querySelector("li.burger").addEventListener("click", function() {
+  this.classList.toggle("active");
+});
+</script>
+
+            
+<div class="container">
+	<div class="row">
+		<div class="full">
+			<div class="divider">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="name">
+			<h1>BEN NEVIS</h1>
+		</div>
+		<div class="about column">
+			<p>	Ben Nevis is the highest mountain in Britain. It towers above Fort William, a town on the shores of Loch Linnhe.<br>
+			<span>The actual summit is a small plateau with great cliffs to the north and steep slopes to the south. The upper part of the mountain has little vegetation, is often veiled in cloud (hill fog) and can be lashed by fearsome storms. These mainly occur during the months from November to April, but even in midsummer the weather can be very severe, with gale-force winds, torrential rain and temperatures close to freezing point. In winter, there are large accumulations of snow, which can persist at the summit for up to nine months in any one year. Anyone attempting to climb the mountain should be aware of these conditions and how quickly the weather can change on the Scottish mountains. Those who reach the summit find the remains of a large building, with a plaque telling them that these are the remains of a meteorological observatory, which was built in 1883 and where hourly recordings of weather were made for 21 years.</p>
+			</span>
+		</div>
+	</div>
+		<div class="row">
+			<div class="full">
+				<div class="divider">
+				</div>
+			</div>
+		</div>
+	<div class="row">
+		<div class="model">
+			<div class="border-top">
+				<div class="dash-left"></div>
+				<div class="dash-right"></div>
+				<h3 class="typeinfo">3D MODEL</h3>
+				<div id="Stage" class="mountain">
+			</div>
+			</div>
+		</div>
+		<div class="data_block">
+			<div class="border-top">
+				<div class="dash-left"></div>
+				<div class="dash-right"></div>
+				<h3 class="typeinfo">HEIGHT</h3>
+				<div class="graph_wrap">
+					<div class="graph_data">
+						<div class="graph_mt"></div>
+						<object class="graph" type="image/svg+xml" data="assets/img/svg/3d/ben_nevis/ben_nevis_side.svg">
+						</object>
+					</div>
+				</div>
+				<table class="tg">
+					<tr>
+						<td>
+							<object class="icon" type="image/svg+xml" data="assets/img/svg/height.svg"></object>
+						</td>
+						<th>	1,346M  <br>
+									4,416FT
+						</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="data_block">
+			<div class="border-top">
+				<div class="dash-left"></div>
+				<div class="dash-right"></div>
+				<h3 class="typeinfo">LOCATION</h3>
+				<table class="tg">
+					<tr>
+						<td>
+							<object class="icon" type="image/svg+xml" data="assets/img/svg/location.svg"></object>
+						</td>
+						<th>	Fort William<br>
+									56°47′49″N 5°00′13″W	<br>
+									56.79685, -5.003508 <br>
+						</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="mapbox">
+			<div class="border-top">
+				<div class="dash-left"></div>
+				<div class="dash-right"></div>
+				<h3 class="typeinfo">MAP</h3>
+				<div class="mapmove"></div>
+				<div id='map'></div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="full">
+			<div class="divider">
+			</div>
+		</div>
+	</div>
+
+        </div>
+        
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoicGF1bG11bGxlbjgyIiwiYSI6ImNpdDk1YjJ5MjAwMngyb3FkZTAydXFjNHEifQ.vhRMTigdoc9s8iT3g-uP5w';
+var map = L.mapbox.map('map')
+		.setView([56.79685, -5.003508], 15);
+
+// Use styleLayer to add a Mapbox style created in Mapbox Studio
+L.mapbox.styleLayer('mapbox://styles/paulmullen82/citu5njbp00262iqgrq0bi3nq').addTo(map);
+if (map.tap) map.dragging.disable();
+if (map.tap) map.touchZoom.disable();
+if (map.tap) map.doubleClickZoom.disable();
+if (map.tap) map.scrollWheelZoom.disable();
+</script>
+<script>
+   AdobeEdge.loadComposition('assets/scripts/ben_nevis', 'mountain', {
+    scaleToFit: "both",
+    centerStage: "undefined",
+    minW: "0px",
+    maxW: "100%",
+    width: "799px",
+    height: "599px",
+		bScaleToParent: "true"
+}, {"style":{"${symbolSelector}":{"isStage":"true","rect":["undefined","undefined","799px","599px"],"fill":["rgba(255,255,255,1)"]}},"dom":{}}, {"dom":{}});
+</script>
+
+
+    </body>
+</html>
