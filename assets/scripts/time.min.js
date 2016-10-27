@@ -16,8 +16,7 @@ function showTheTime() {
         if (degrees < 180) {
             $('.sunmoon .sun-animation, .sun-symbol-path').css('transform', 'rotate(' + degrees + 'deg)');
         } else {
-            $('.sunmoon .sun-animation, .sun-symbol-path').css('transform', 'rotate(181deg)');
-            $('.sunmoon .sun-animation, .sun-symbol-path').css('opacity', 0);
+            $('.sunmoon .sun-animation, .sun-symbol-path').css({'transform':'rotate(181deg)','opacity': 0});
         }
     })
 }
