@@ -21,7 +21,7 @@ function loadWeather(e, t) {
         woeid: t,
         unit: "C",
         success: function (e) {
-            sunriseTime = getHoursAndMinutesFromTimeString('12:03 am');
+            sunriseTime = getHoursAndMinutesFromTimeString(e.sunrise);
             sunsetTime = getHoursAndMinutesFromTimeString(e.sunset);
             temp = "<p>" + e.temp + "&deg;C</p>",
                 wcode = '<object class="icon" data="assets/img/svg/weathericons/' + e.code + '.svg">',
